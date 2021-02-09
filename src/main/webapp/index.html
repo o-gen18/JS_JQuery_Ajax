@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1 align="center">Registration form</h1>
+</div>
+<div class="container" style="width:50%">
+    <form action="index.html">
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input id ="name" type="text" class="form-control" name="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname: </label>
+            <input id = "surname" type="text" class="form-control" name="surname" placeholder="Enter surname">
+        </div>
+        <div class="form-group">
+            <label>Gender: </label>
+            <label for="male">Male</label>
+            <input id="male" type="radio" name="gender" value="male">
+            <label for="female">Female</label>
+            <input id="female" type="radio" name="gender" value="female">
+        </div>
+        <div class="form-group">
+            <label for="desc">Description: </label>
+            <textarea id="desc" class="form-control" name="desc" placeholder="Desc..."></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+<br>
+<div class="container" style="width:50%">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Oleg</td>
+                <td>Generalov</td>
+                <td>Male</td>
+                <td>Student</td>
+            </tr>
+            <tr>
+                <td>Ivanka</td>
+                <td>Trump</td>
+                <td>Female</td>
+                <td>Trump's wife</td>
+            </tr>
+            <tr>
+                <td>Pavel</td>
+                <td>Durov</td>
+                <td>Male</td>
+                <td>Businessman</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
