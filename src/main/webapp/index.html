@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function validate() {
+            var message = '';
+            var radiosUnchecked = document.getElementsByName('gender').length;
+            var form = document.getElementById('form');
+            for (var i = 0; i < form.length; i++) {
+                if (form[i].id === 'name' || form[i].id === 'surname') {
+                    if (form[i].value === '' || form[i].value == null) {
+                        message = message + ($('#' + (form[i].id)).attr('placeholder') + '\r\n');
+                    }
+                } else if (form[i].name === 'gender') {
+                    if (!form[i].checked) {
+                        radiosUnchecked--;
+                        if (radiosUnchecked === 0) {
+                            message = message + ('Please, choose your gender'  + '\r\n');
+                        }
+                    }
+                } else if (form[i].id === 'description') {
+                    if (form[i].value === '') {
+                        message = message + $('#' + (form[i].id)).attr('placeholder') + '\r\n';
+                    }
+                }
+            }
+            if (message === '') {
+                alert('Submitted!');
+            } else {
+                alert(message);
+            }
+        }
+    </script>
     <style>
     </style>
 </head>
@@ -16,7 +46,7 @@
     <h1 align="center">Registration form</h1>
 </div>
 <div class="container" style="width:50%">
-    <form action="index.html">
+    <form action="index.html" id="form">
         <div class="form-group">
             <label for="name">Name: </label>
             <input id ="name" type="text" class="form-control" name="name" placeholder="Enter name">
@@ -33,10 +63,10 @@
             <input id="female" type="radio" name="gender" value="female">
         </div>
         <div class="form-group">
-            <label for="desc">Description: </label>
-            <textarea id="desc" class="form-control" name="desc" placeholder="Desc..."></textarea>
+            <label for="description">Description: </label>
+            <textarea id="description" class="form-control" name="description" placeholder="Type description..."></textarea>
         </div>
-        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="submit" class="btn btn-primary" value="Submit" onclick="return validate()">
     </form>
 </div>
 <br>
