@@ -14,9 +14,10 @@ public class GreetingServlet extends HttpServlet {
         throws ServletException, IOException {
         resp.setContentType("text/plain");
         resp.setCharacterEncoding("UTF-8");
-        String name = req.getParameter("name");
+        String text = req.getParameter("text");
+        String json = "{\"text\":\"" + text + "\"}";
         PrintWriter writer = new PrintWriter(resp.getOutputStream());
-        writer.println("Nice to meet you, " + name);
+        writer.println(json);
         writer.flush();
     }
 }
