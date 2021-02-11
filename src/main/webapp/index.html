@@ -31,10 +31,21 @@
                 }
             }
             if (message === '') {
-                alert('Submitted!');
+                addRow();
             } else {
                 alert(message);
             }
+            return false;
+        }
+
+        function addRow() {
+            var name = $('#name').val();
+            var surname = $('#surname').val();
+            var gender = $('#gender').val();
+            var desc = $('#description').val();
+
+            $('#table tr:last').after('<tr><td>' + name + '</td><td>' + surname + '</td><td>' + gender
+                + '</td><td>' + desc + '</td></tr>');
         }
     </script>
     <style>
@@ -71,7 +82,7 @@
 </div>
 <br>
 <div class="container" style="width:50%">
-    <table class="table table-bordered">
+    <table id="table" class="table table-bordered">
         <thead>
             <tr>
                 <th>Name</th>
@@ -81,24 +92,6 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Oleg</td>
-                <td>Generalov</td>
-                <td>Male</td>
-                <td>Student</td>
-            </tr>
-            <tr>
-                <td>Ivanka</td>
-                <td>Trump</td>
-                <td>Female</td>
-                <td>Trump's wife</td>
-            </tr>
-            <tr>
-                <td>Pavel</td>
-                <td>Durov</td>
-                <td>Male</td>
-                <td>Businessman</td>
-            </tr>
         </tbody>
     </table>
 </div>
